@@ -1,0 +1,101 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#f53c31",
+        "marker-size": "medium",
+        "marker-symbol": "toilets",
+        "friendly-name": "The Factory"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.86208635568619,
+          35.932595912580766
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#f53c31",
+        "marker-size": "medium",
+        "marker-symbol": "toilets",
+        "friendly-name": "Whole Foods"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.82438254356384,
+          35.93367094918124
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#f53c31",
+        "marker-size": "medium",
+        "marker-symbol": "toilets",
+        "friendly-name": "Walmart"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.81962162256241,
+          35.94053129294755
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#f53c31",
+        "marker-size": "medium",
+        "marker-symbol": "toilets",
+        "friendly-name": "Publix"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.88441038131712,
+          35.96433482463347
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#f53c31",
+        "marker-size": "medium",
+        "marker-symbol": "toilets",
+        "friendly-name": "Judge Fulton"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.87860071659088,
+          35.94559744503743
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#f53c31",
+        "marker-size": "medium",
+        "marker-symbol": "toilets",
+        "friendly-name": "Coolsprings"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.82325601577757,
+          35.947165215409214
+        ]
+      }
+    }
+  ]
+}
