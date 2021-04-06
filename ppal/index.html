@@ -27,6 +27,16 @@
         height: 35px;
         cursor: pointer;
       }
+
+      .mapboxgl-popup {
+        max-width: 200px;
+      }
+
+      .mapboxgl-popup-content {
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+      }
+
     </style>
 </head>
 <body>
@@ -41,7 +51,7 @@ var map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/luiscabrera77/ckn52zqqa058y17roq8zndr38',
   center: [-86.854647, 35.934168],
-  zoom: 12
+  zoom: 11
 });
 
 // code from the next step will go here!
@@ -81,6 +91,10 @@ el.className = 'marker';
 // make a marker for each feature and add to the map
 new mapboxgl.Marker(el)
   .setLngLat(marker.geometry.coordinates)
+  new mapboxgl.Marker(el)
+  .setLngLat(marker.geometry.coordinates)
+  .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+  .setHTML('<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>'))
   .addTo(map);
 });
 
