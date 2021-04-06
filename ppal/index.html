@@ -1,22 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PPAL</title>
-  <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
-  <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
-  <link rel="stylesheet" href="./assets/css/styles.css" type="text/css" />
+    <meta charset='utf-8' />
+    <title>Add custom markers in Mapbox GL JS</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+      }
+
+      .marker {
+        background-image: url('assets/img/relief.png');
+        background-size: cover;
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+      }
+    </style>
 </head>
 <body>
-  <div id='map' style='width: 375px; height: 812px;'></div>
-  <script>
-  mapboxgl.accessToken = 'pk.eyJ1IjoibHVpc2NhYnJlcmE3NyIsImEiOiJja21ucXl5NzAwZTA5MnZrNXZ4dG9hMGVlIn0.AGLuqmVZCqfuVq5wR2ngaA';
-  var map = new mapboxgl.Map({
+
+<div id='map'></div>
+
+<script>
+
+mapboxgl.accessToken = 'pk.eyJ1IjoibHVpc2NhYnJlcmE3NyIsImEiOiJja21ucXl5NzAwZTA5MnZrNXZ4dG9hMGVlIn0.AGLuqmVZCqfuVq5wR2ngaA';
+
+var map = new mapboxgl.Map({
   container: 'map',
-  style: 'mapbox://styles/luiscabrera77/ckn52zqqa058y17roq8zndr38'
-  });
-  </script>
+  style: 'mapbox://styles/luiscabrera77/ckn52zqqa058y17roq8zndr38',
+  center: [-86.854647, 35.934168],
+  zoom: 12
+});
+
+// code from the next step will go here!
+var geojson = {
+  type: 'FeatureCollection',
+  features: [{
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-86.86208635568619,35.932595912580766]
+    },
+    properties: {
+      title: 'The Factory',
+      description: '7 times used today, last serviced 3 hours ago'
+    }
+  },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-86.82438254356384,35.93367094918124]
+    },
+    properties: {
+      title: 'Mapbox',
+      description: 'San Francisco, California'
+    }
+  }]
+};
+
+// add markers to map
+geojson.features.forEach(function(marker) {
+
+// create a HTML element for each feature
+var el = document.createElement('div');
+el.className = 'marker';
+
+// make a marker for each feature and add to the map
+new mapboxgl.Marker(el)
+  .setLngLat(marker.geometry.coordinates)
+  .addTo(map);
+});
+
+</script>
+
 </body>
 </html>
