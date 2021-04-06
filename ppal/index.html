@@ -29,13 +29,61 @@
       }
 
       .mapboxgl-popup {
-        max-width: 200px;
+        min-width: 230px;
+        max-width: 230px; 
+      }
+
+      /* Marker tweaks */
+      .mapboxgl-popup-close-button {
+        display: none;
       }
 
       .mapboxgl-popup-content {
+        font: 400 15px/22px 'Open Sans', sans-serif;
+        padding: 0px;
         text-align: center;
-        font-family: 'Open Sans', sans-serif;
+        align-items: center;
+        background-color: rgba(255,255,255,1);
       }
+
+      .mapboxgl-popup-content-wrapper {
+        padding: 10px;
+      }
+
+      .mapboxgl-popup-content h3 {
+        background: #109CF1;
+        color: #fff;
+        margin: 0;
+        display: block;
+        padding: 10px;
+        border-radius: 10px 10px 0 0;
+        font-weight: 700;
+        margin-top: -15px;
+      }
+
+.mapboxgl-popup-content h4 {
+  margin: 0;
+  display: block;
+  padding: 0px;
+  font-weight: 400;
+}
+
+.mapboxgl-popup-content div {
+  padding: 10px;
+}
+
+.mapboxgl-container .leaflet-marker-icon {
+  cursor: pointer;
+}
+
+.mapboxgl-popup-anchor-top > .mapboxgl-popup-content {
+  margin-top: 15px;
+}
+
+.mapboxgl-popup-anchor-top > .mapboxgl-popup-tip {
+  border-bottom-color: #109CF1;
+}
+
 
     </style>
 </head>
@@ -57,7 +105,8 @@ var map = new mapboxgl.Map({
 // code from the next step will go here!
 var geojson = {
   type: 'FeatureCollection',
-  features: [{
+  features: [
+  {
     type: 'Feature',
     geometry: {
       type: 'Point',
@@ -65,7 +114,7 @@ var geojson = {
     },
     properties: {
       title: 'The Factory',
-      description: '7 times used today, last serviced 3 hours ago'
+      description: 'Behind MafiaoZas',
     }
   },
   {
@@ -75,10 +124,78 @@ var geojson = {
       coordinates: [-86.82438254356384,35.93367094918124]
     },
     properties: {
-      title: 'Mapbox',
-      description: 'San Francisco, California'
+      title: 'Whole Foods',
+      description: 'On the back'
     }
-  }]
+  },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-86.81962162256241,35.94053129294755]
+    },
+    properties: {
+      title: 'Walmart',
+      description: 'Next to Home & Garden'
+    }
+  },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-86.88441038131712,35.96433482463347]
+    },
+    properties: {
+      title: 'Publix',
+      description: 'By the UPS Store'
+    }
+  },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-86.87860071659088,35.94559744503743]
+    },
+    properties: {
+      title: 'Judge Fulton Park',
+      description: 'Next to tennis courts'
+    }
+  },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-86.82325601577757,35.947165215409214]
+    },
+    properties: {
+      title: 'Coolsprings Plaza',
+      description: 'Behind the Starbucks'
+    }
+  },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-86.7962762,36.0197665]
+    },
+    properties: {
+      title: 'Brenthaven Cumberland Church',
+      description: 'Right side of Parking Lot'
+    }
+  },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-86.9054698,36.0318492]
+    },
+    properties: {
+      title: 'Heritage Medical Associates',
+      description: 'Far back by the big tree'
+    }
+  },
+
+]
 };
 
 // add markers to map
@@ -93,10 +210,11 @@ new mapboxgl.Marker(el)
   .setLngLat(marker.geometry.coordinates)
   new mapboxgl.Marker(el)
   .setLngLat(marker.geometry.coordinates)
-  .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-  .setHTML('<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>'))
+  .setPopup(new mapboxgl.Popup({ offset: 25}) // add popups
+  .setHTML('<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>' + '<img src="assets/img/chart.png">'))
   .addTo(map);
 });
+
 
 </script>
 
