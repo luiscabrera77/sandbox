@@ -16,6 +16,7 @@
     body {
       margin: 0;
       padding: 0;
+      border: 0;
     }
 
     #map {
@@ -271,7 +272,7 @@
       new mapboxgl.Marker(el)
         .setLngLat(marker.geometry.coordinates)
         .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-          .setHTML('<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>' + '<img src="assets/img/chart.png">'))
+          .setHTML('<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>' + '<a href="open.html"><img src="assets/img/chart.png"></a>'))
         .addTo(map);
     });
 
