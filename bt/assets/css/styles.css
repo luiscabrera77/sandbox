@@ -5,8 +5,10 @@
   border: 0;
 }
 body {
-  min-width:375px;
+  min-width:100%;
+  overflow-x:hidden;
 }
+
 img {max-width:100%}
 
 .fullwidth {
