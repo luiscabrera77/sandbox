@@ -4,6 +4,9 @@
   padding: 0;
   border: 0;
 }
+body {
+  min-width:375px;
+}
 img {max-width:100%}
 
 .fullwidth {
