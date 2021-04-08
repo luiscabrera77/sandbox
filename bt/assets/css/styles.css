@@ -11,7 +11,7 @@ body {
 }
 
 img {
-  width:390px;
+  min-width: 100vw;
   max-width: 100vw;
 }
 
