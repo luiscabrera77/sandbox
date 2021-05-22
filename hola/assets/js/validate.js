@@ -4,7 +4,6 @@ kid1.value==kid2.value || kid1.value==kid3.value || kid1.value==kid4.value || ki
 ) 
   {
     kid1.className = "wrong";
-    console.log(kid4.value);
   }
   else {kid1.className = "ok"};
 });

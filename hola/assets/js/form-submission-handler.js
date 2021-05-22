@@ -69,14 +69,17 @@
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
+          console.log("ok");
           form.reset();
           var formElements = form.querySelector(".form-elements")
           if (formElements) {
             formElements.style.display = "none"; // hide form
           }
-          var thankYouMessage = form.querySelector(".thankyou_message");
+          var thankYouMessage = document.querySelector(".thankyou_message");
+          var kidsNames = document.querySelector(".kidsnames");
           if (thankYouMessage) {
             thankYouMessage.style.display = "block";
+            kidsNames.style.display= "none";
           }
         }
     };
