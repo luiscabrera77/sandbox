@@ -1,3 +1,4 @@
+/* Selects any disabled <input> */
 body {
   margin: 1em;
 }
@@ -7,28 +8,38 @@ aside {
     border-radius: 3px;
     color: #fff;
     margin-bottom: 2em;
+    font-size: smaller;
 }
 textarea {
   width: 100%;
 }
 .content-head {
-  font-weight: 400;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  margin: 2em 0 1em;
+  margin: 1em 0 1em;
 }
 .is-center {
   text-align: center;
 }
 .button-success {
   color: white;
-  border-radius: 4px;
+  border-radius: 6px;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   background: rgb(28, 184, 65); /* this is a green */
 }
+.button-error {
+  color: white;
+  border-radius: 6px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  background: rgb(202, 60, 60);
+  /* this is a maroon */
+}
+
 .button-xlarge {
   font-size: 125%;
 }
+
 button {
   float: center;
 }
@@ -43,17 +54,50 @@ button {
 }
 
 .ok {
-  color:blue;
+  color:#1f8dd6;
 }
 
 input[type=number] {
-  width: 60px;
+  width: 120px;
   padding: 12px 12px;
   margin: 8px 0;
   border: 2px solid rgb(0, 106, 255);
-  border-radius: 4px;
+  border-radius: 6px;
+  text-align: center;
 }
 
-.kidsnames {
-  font-size: small;
+input:disabled[type=number] {
+  width: 120px;
+  height: 37px;
+  color: #1f8dd6;
+  padding: 12px 12px;
+  margin: 8px 0;
+  border: 2px solid #1f8dd6;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.taken {
+  text-decoration: line-through;
+  color:lightblue;
+}
+
+.stickynames {
+  font-size: 8.5pt;
+  display: block;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 5px;
+}
+
+.remove {
+  visibility: visible;
+  font-size: 9pt;
+  color:red;
+}
+
+.ghost {
+  visibility: hidden;
+  font-size: 9pt;
+  color:rgb(255, 255, 255);
 }
